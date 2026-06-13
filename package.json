@@ -1,0 +1,24 @@
+{
+  "name": "vortex-launcher",
+  "version": "5.1.2",
+  "description": "A lightweight game launcher to bypass launcher bloat.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "varshuai",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.vortex.launcher",
+    "productName": "Vortex Launcher",
+    "win": {
+      "icon": "assets/icon.png",
+      "target": "portable"
+    }
+  }
+}
