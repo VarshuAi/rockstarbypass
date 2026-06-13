@@ -12,7 +12,7 @@
       theme: {
         extend: {
           colors: {
-            nl: {
+            vx: {
               bg: '#06100c', surface: '#0c1a14', card: '#12261e', cardHover: '#1c382d',
               pink: '#d4af37', pinkLight: '#e6c875', pinkDark: '#aa821c',
               pinkMuted: 'rgba(212,175,55,0.15)', pinkGlow: 'rgba(212,175,55,0.3)',
@@ -191,7 +191,7 @@
     .achievement-card.locked { opacity: 0.7; filter: grayscale(0.4); }
   </style>
 </head>
-<body class="bg-nl-bg text-nl-text">
+<body class="bg-vx-bg text-vx-text">
 
 <!-- Dynamic Aurora Backgrounds -->
 <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
@@ -202,15 +202,15 @@
 <div id="loginOverlay" class="fixed inset-0 z-[200] flex items-center justify-center" style="background:#06100c;">
   <div class="w-full max-w-sm animate-float-in">
     <div class="text-center mb-8">
-      <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-nl-pinkMuted flex items-center justify-center pulse-glow">
+      <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-vx-pinkMuted flex items-center justify-center pulse-glow">
         <img src="./assets/icon.png" alt="Vortex" class="w-14 h-14 object-contain">
       </div>
       <h1 class="text-2xl font-bold mb-1">Vortex</h1>
-      <p class="text-xs text-nl-pink font-semibold tracking-wider uppercase mb-2">Developed by varshan</p>
-      <p class="text-sm text-nl-textMuted" id="loginMessage">Welcome back! Use the launcher freely.</p>
+      <p class="text-xs text-vx-pink font-semibold tracking-wider uppercase mb-2">Developed by varshan</p>
+      <p class="text-sm text-vx-textMuted" id="loginMessage">Welcome back! Use the launcher freely.</p>
     </div>
-    <div class="bg-nl-surface/65 backdrop-blur-xl border border-nl-border/50 rounded-2xl p-7 text-center shadow-2xl shadow-black/40">
-      <p class="text-sm text-nl-textMuted mb-6 leading-relaxed">This software is free and open to everyone. No access code required.</p>
+    <div class="bg-vx-surface/65 backdrop-blur-xl border border-vx-border/50 rounded-2xl p-7 text-center shadow-2xl shadow-black/40">
+      <p class="text-sm text-vx-textMuted mb-6 leading-relaxed">This software is free and open to everyone. No access code required.</p>
       <button id="loginBtn" class="w-full py-3.5 btn-gold rounded-xl shadow-lg" onclick="attemptLogin()">
         Enter Launcher
       </button>
@@ -218,26 +218,26 @@
   </div>
 </div>
 
-<div class="title-bar fixed top-0 left-0 right-0 h-9 bg-nl-surface backdrop-blur-xl flex items-center justify-between z-[215] border-b border-nl-border shadow-lg shadow-black/30" ondblclick="maximizeApp()">
+<div class="title-bar fixed top-0 left-0 right-0 h-9 bg-vx-surface backdrop-blur-xl flex items-center justify-between z-[215] border-b border-vx-border shadow-lg shadow-black/30" ondblclick="maximizeApp()">
   <div class="flex items-center gap-3 pl-4">
     <img src="./assets/icon.png" class="w-5 h-5">
-    <span class="text-xs font-semibold text-nl-pinkLight tracking-wider uppercase">Vortex Launcher</span>
-    <span class="text-[10px] text-nl-textMuted font-medium tracking-wide ml-2 bg-nl-card px-2 py-0.5 rounded border border-nl-border/40 select-none">- developed by varshan</span>
+    <span class="text-xs font-semibold text-vx-pinkLight tracking-wider uppercase">Vortex Launcher</span>
+    <span class="text-[10px] text-vx-textMuted font-medium tracking-wide ml-2 bg-vx-card px-2 py-0.5 rounded border border-vx-border/40 select-none">- developed by varshan</span>
   </div>
   <div class="flex items-center h-full gap-2 pr-2">
-    <button class="px-3 py-1 rounded-full flex items-center gap-1.5 text-[10px] font-bold text-nl-pinkLight border border-nl-pink/25 bg-nl-pinkMuted/45 hover:bg-nl-pink/25 hover:border-nl-pink/50 hover:scale-[1.04] active:scale-[0.98] transition-all duration-300 shadow-md shadow-black/20" onclick="openSocialLink('https://github.com/VarshuAi')">
+    <button class="px-3 py-1 rounded-full flex items-center gap-1.5 text-[10px] font-bold text-vx-pinkLight border border-vx-pink/25 bg-vx-pinkMuted/45 hover:bg-vx-pink/25 hover:border-vx-pink/50 hover:scale-[1.04] active:scale-[0.98] transition-all duration-300 shadow-md shadow-black/20" onclick="openSocialLink('https://github.com/VarshuAi')">
       <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
       </svg>
       <span>GitHub</span>
     </button>
-    <button class="px-3 py-1 rounded-full flex items-center gap-1.5 text-[10px] font-bold text-nl-pinkLight border border-nl-pink/25 bg-nl-pinkMuted/45 hover:bg-nl-pink/25 hover:border-nl-pink/50 hover:scale-[1.04] active:scale-[0.98] transition-all duration-300 shadow-md shadow-black/20" onclick="openSocialLink('https://instagram.com/being.version')">
+    <button class="px-3 py-1 rounded-full flex items-center gap-1.5 text-[10px] font-bold text-vx-pinkLight border border-vx-pink/25 bg-vx-pinkMuted/45 hover:bg-vx-pink/25 hover:border-vx-pink/50 hover:scale-[1.04] active:scale-[0.98] transition-all duration-300 shadow-md shadow-black/20" onclick="openSocialLink('https://instagram.com/being.version')">
       <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
       </svg>
       <span>Instagram</span>
     </button>
-    <div class="w-[1px] h-4 bg-nl-border/40 mx-1"></div>
+    <div class="w-[1px] h-4 bg-vx-border/40 mx-1"></div>
     <button class="win-btn h-full px-4 flex items-center justify-center text-white/80 hover:text-white" onclick="minimizeApp()"><i data-lucide="minus" class="w-3.5 h-3.5"></i></button>
     <button class="win-btn h-full px-4 flex items-center justify-center text-white/80 hover:text-white" onclick="maximizeApp()"><i data-lucide="square" class="w-3 h-3"></i></button>
     <button class="win-btn win-btn-close h-full px-4 flex items-center justify-center text-white/80 hover:text-white" onclick="closeApp()"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
@@ -245,20 +245,20 @@
 </div>
 
 <div class="flex h-full pt-9">
-  <aside class="w-60 bg-nl-surface/35 backdrop-blur-2xl border-r border-nl-border/30 flex flex-col shrink-0">
-    <div class="p-5 border-b border-nl-border/30">
+  <aside class="w-60 bg-vx-surface/35 backdrop-blur-2xl border-r border-vx-border/30 flex flex-col shrink-0">
+    <div class="p-5 border-b border-vx-border/30">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-nl-pinkMuted flex items-center justify-center pulse-glow">
+        <div class="w-10 h-10 rounded-xl bg-vx-pinkMuted flex items-center justify-center pulse-glow">
           <img src="./assets/icon.png" class="w-7 h-7">
         </div>
         <div>
           <h1 class="text-sm font-bold">Vortex</h1>
-          <p class="text-[10px] text-nl-pink font-medium tracking-wider uppercase">Game Launcher</p>
+          <p class="text-[10px] text-vx-pink font-medium tracking-wider uppercase">Game Launcher</p>
         </div>
       </div>
     </div>
     <nav class="flex-1 py-4 px-2 space-y-1">
-        <p class="text-[10px] font-semibold text-nl-textMuted uppercase tracking-widest px-3 mb-3">Main</p>
+        <p class="text-[10px] font-semibold text-vx-textMuted uppercase tracking-widest px-3 mb-3">Main</p>
         <button class="nav-item active w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium" data-tab="accounts" onclick="switchTab('accounts')">
             <i data-lucide="gamepad-2" class="w-4 h-4"></i> Accounts
         </button>
@@ -279,14 +279,14 @@
     <div class="tab-content active" id="tab-accounts">
       <div class="px-8 pb-8 mt-6">
         <div class="flex items-center justify-between mb-6">
-          <div class="flex items-center gap-2"><div class="w-1 h-5 bg-nl-pink rounded-full"></div><h3 class="text-lg font-bold">Available Accounts</h3></div>
+          <div class="flex items-center gap-2"><div class="w-1 h-5 bg-vx-pink rounded-full"></div><h3 class="text-lg font-bold">Available Accounts</h3></div>
           <button onclick="refreshAccounts()" class="px-3.5 py-2 btn-premium rounded-xl text-xs flex items-center gap-2"><i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Refresh</button>
         </div>
         <div class="mb-4">
-          <input type="text" id="accounts-search-input" placeholder="Search games..." class="w-full bg-nl-card border border-nl-border rounded-lg px-4 py-2.5 text-sm text-nl-text placeholder-nl-textMuted focus:outline-none focus:border-nl-pink/50" oninput="filterAccounts()">
+          <input type="text" id="accounts-search-input" placeholder="Search games..." class="w-full bg-vx-card border border-vx-border rounded-lg px-4 py-2.5 text-sm text-vx-text placeholder-vx-textMuted focus:outline-none focus:border-vx-pink/50" oninput="filterAccounts()">
         </div>
         <div id="accounts-container" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <p class="col-span-full text-center text-nl-textMuted py-8">Loading accounts...</p>
+          <p class="col-span-full text-center text-vx-textMuted py-8">Loading accounts...</p>
         </div>
       </div>
     </div>
@@ -295,17 +295,17 @@
     <div class="tab-content" id="tab-bypass">
       <div class="px-8 py-8">
         <div class="flex justify-between items-center mb-6">
-          <div><h2 class="text-2xl font-bold flex items-center gap-2"><i data-lucide="shield" class="text-nl-pink"></i> Bypass Panel</h2><p class="text-xs text-nl-textMuted mt-1">Click a game to manage bypass</p></div>
+          <div><h2 class="text-2xl font-bold flex items-center gap-2"><i data-lucide="shield" class="text-vx-pink"></i> Bypass Panel</h2><p class="text-xs text-vx-textMuted mt-1">Click a game to manage bypass</p></div>
           <button onclick="toggleCustomPathModal()" class="flex items-center gap-2 px-4.5 py-2.5 btn-premium rounded-xl text-sm font-medium group">
-            <i data-lucide="plus" class="w-4.5 h-4.5 text-nl-pink group-hover:scale-110"></i>
+            <i data-lucide="plus" class="w-4.5 h-4.5 text-vx-pink group-hover:scale-110"></i>
             <span>Custom Path</span>
           </button>
         </div>
         <div class="mb-4">
-          <input type="text" id="bypass-search-input" placeholder="Search games..." class="w-full bg-nl-card border border-nl-border rounded-lg px-4 py-2.5 text-sm text-nl-text placeholder-nl-textMuted focus:outline-none focus:border-nl-pink/50" oninput="filterBypass()">
+          <input type="text" id="bypass-search-input" placeholder="Search games..." class="w-full bg-vx-card border border-vx-border rounded-lg px-4 py-2.5 text-sm text-vx-text placeholder-vx-textMuted focus:outline-none focus:border-vx-pink/50" oninput="filterBypass()">
         </div>
         <div id="bypass-games-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <p class="col-span-full text-center text-nl-textMuted py-8">Loading bypass games...</p>
+          <p class="col-span-full text-center text-vx-textMuted py-8">Loading bypass games...</p>
         </div>
       </div>
     </div>
@@ -315,16 +315,16 @@
       <div class="px-8 py-8">
         <div class="flex justify-between items-center mb-6">
           <div>
-            <h2 class="text-2xl font-bold flex items-center gap-2"><i data-lucide="trophy" class="text-nl-pink"></i> Grand Theft Auto V Achievements</h2>
-            <p class="text-xs text-nl-textMuted mt-1">Unlocked achievements are tracked from your mod's output folder</p>
+            <h2 class="text-2xl font-bold flex items-center gap-2"><i data-lucide="trophy" class="text-vx-pink"></i> Grand Theft Auto V Achievements</h2>
+            <p class="text-xs text-vx-textMuted mt-1">Unlocked achievements are tracked from your mod's output folder</p>
           </div>
           <button onclick="refreshAchievements()" class="px-3.5 py-2 btn-premium rounded-xl text-xs flex items-center gap-2"><i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Refresh</button>
         </div>
         <div class="mb-4">
-          <input type="text" id="achievements-search-input" placeholder="Search achievements..." class="w-full bg-nl-card border border-nl-border rounded-lg px-4 py-2.5 text-sm text-nl-text placeholder-nl-textMuted focus:outline-none focus:border-nl-pink/50" oninput="filterAchievements()">
+          <input type="text" id="achievements-search-input" placeholder="Search achievements..." class="w-full bg-vx-card border border-vx-border rounded-lg px-4 py-2.5 text-sm text-vx-text placeholder-vx-textMuted focus:outline-none focus:border-vx-pink/50" oninput="filterAchievements()">
         </div>
         <div id="achievements-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          <p class="col-span-full text-center text-nl-textMuted py-8">Loading achievements...</p>
+          <p class="col-span-full text-center text-vx-textMuted py-8">Loading achievements...</p>
         </div>
       </div>
     </div>
@@ -332,25 +332,25 @@
     <!-- BYPASS DETAIL TAB -->
     <div class="tab-content" id="tab-bypass-detail">
       <div class="px-8 py-8">
-        <button onclick="goBackToBypassList()" class="flex items-center gap-2 text-nl-textMuted hover:text-nl-pink mb-6">
+        <button onclick="goBackToBypassList()" class="flex items-center gap-2 text-vx-textMuted hover:text-vx-pink mb-6">
           <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Bypass List
         </button>
         <div class="animate-fade-up">
           <div class="flex flex-col lg:flex-row gap-8 pb-24">
             <div class="w-full lg:w-1/3">
-              <img id="bypass-detail-banner" src="" class="w-full rounded-2xl border border-nl-border shadow-2xl">
+              <img id="bypass-detail-banner" src="" class="w-full rounded-2xl border border-vx-border shadow-2xl">
             </div>
             <div class="w-full lg:w-2/3">
               <h2 id="bypass-detail-title" class="text-3xl font-bold mb-2"></h2>
               <p id="bypass-detail-status" class="text-sm uppercase tracking-wider mb-4"></p>
               <div id="bypass-detail-actions" class="flex flex-wrap gap-3 mb-6"></div>
-              <div id="bypass-detail-progress" class="hidden p-5 bg-nl-card border border-nl-pink/20 rounded-2xl mb-6">
+              <div id="bypass-detail-progress" class="hidden p-5 bg-vx-card border border-vx-pink/20 rounded-2xl mb-6">
                 <div class="flex items-center justify-between mb-3">
-                  <p id="bypass-progress-text" class="text-xs text-nl-pinkLight font-mono tracking-wide">Initializing...</p>
-                  <span id="bypass-progress-percent" class="text-xs font-bold text-nl-pink">0%</span>
+                  <p id="bypass-progress-text" class="text-xs text-vx-pinkLight font-mono tracking-wide">Initializing...</p>
+                  <span id="bypass-progress-percent" class="text-xs font-bold text-vx-pink">0%</span>
                 </div>
-                <div class="w-full h-2 bg-nl-bg rounded-full overflow-hidden">
-                  <div id="bypass-progress-bar" class="h-full bg-gradient-to-r from-nl-pinkDark via-nl-pink to-nl-pinkLight rounded-full progress-pulse transition-all duration-500 ease-out" style="width:0%"></div>
+                <div class="w-full h-2 bg-vx-bg rounded-full overflow-hidden">
+                  <div id="bypass-progress-bar" class="h-full bg-gradient-to-r from-vx-pinkDark via-vx-pink to-vx-pinkLight rounded-full progress-pulse transition-all duration-500 ease-out" style="width:0%"></div>
                 </div>
               </div>
               <div id="custom-path-section" class="hidden">
@@ -367,27 +367,27 @@
     <!-- GAME DETAILS TAB (Accounts) -->
     <div class="tab-content" id="tab-game-details">
       <div class="px-8 py-8 relative" style="min-height: calc(100vh - 36px);">
-        <button onclick="switchTab('accounts')" class="flex items-center gap-2 text-nl-textMuted hover:text-nl-pink mb-6 transition-colors">
+        <button onclick="switchTab('accounts')" class="flex items-center gap-2 text-vx-textMuted hover:text-vx-pink mb-6 transition-colors">
           <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Accounts
         </button>
         <div class="flex flex-col lg:flex-row gap-8 animate-fade-up pb-24">
           <div class="w-full lg:w-1/2 flex flex-col gap-6">
-            <img id="detail-banner" src="" class="w-full rounded-2xl border border-nl-border shadow-2xl">
+            <img id="detail-banner" src="" class="w-full rounded-2xl border border-vx-border shadow-2xl">
             <div class="grid grid-cols-2 gap-3">
-              <div class="bg-nl-card p-3 rounded-xl border border-nl-border">
-                <span class="text-[10px] uppercase tracking-widest text-nl-textMuted block mb-1">Release Date</span>
+              <div class="bg-vx-card p-3 rounded-xl border border-vx-border">
+                <span class="text-[10px] uppercase tracking-widest text-vx-textMuted block mb-1">Release Date</span>
                 <span id="detail-date" class="font-semibold text-sm"></span>
               </div>
-              <div class="bg-nl-card p-3 rounded-xl border border-nl-border">
-                <span class="text-[10px] uppercase tracking-widest text-nl-textMuted block mb-1">Metacritic</span>
+              <div class="bg-vx-card p-3 rounded-xl border border-vx-border">
+                <span class="text-[10px] uppercase tracking-widest text-vx-textMuted block mb-1">Metacritic</span>
                 <span id="detail-metacritic" class="font-semibold text-sm"></span>
               </div>
-              <div class="bg-nl-card p-3 rounded-xl border border-nl-border">
-                <span class="text-[10px] uppercase tracking-widest text-nl-textMuted block mb-1">Developer</span>
+              <div class="bg-vx-card p-3 rounded-xl border border-vx-border">
+                <span class="text-[10px] uppercase tracking-widest text-vx-textMuted block mb-1">Developer</span>
                 <span id="detail-developer" class="font-semibold text-sm"></span>
               </div>
-              <div class="bg-nl-card p-3 rounded-xl border border-nl-border">
-                <span class="text-[10px] uppercase tracking-widest text-nl-textMuted block mb-1">Publisher</span>
+              <div class="bg-vx-card p-3 rounded-xl border border-vx-border">
+                <span class="text-[10px] uppercase tracking-widest text-vx-textMuted block mb-1">Publisher</span>
                 <span id="detail-publisher" class="font-semibold text-sm"></span>
               </div>
             </div>
@@ -395,32 +395,32 @@
 
           <div class="w-full lg:w-1/2">
             <h2 id="detail-title" class="text-3xl font-extrabold mb-2"></h2>
-            <p id="detail-appid" class="text-nl-pink font-mono text-sm mb-4"></p>
-            <p id="detail-description" class="text-nl-textMuted leading-relaxed mb-6"></p>
+            <p id="detail-appid" class="text-vx-pink font-mono text-sm mb-4"></p>
+            <p id="detail-description" class="text-vx-textMuted leading-relaxed mb-6"></p>
 
             <div class="flex flex-wrap gap-2 mb-6" id="detail-categories-genres"></div>
 
             <div class="mb-6">
-              <h4 class="text-sm font-semibold text-nl-pinkLight mb-3">System Requirements</h4>
+              <h4 class="text-sm font-semibold text-vx-pinkLight mb-3">System Requirements</h4>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-nl-card p-4 rounded-xl border border-nl-border">
-                  <h5 class="text-xs font-semibold uppercase tracking-wider text-nl-textMuted mb-2">Minimum</h5>
-                  <div id="req-min-content" class="text-xs text-nl-text leading-relaxed max-h-40 overflow-y-auto"></div>
+                <div class="bg-vx-card p-4 rounded-xl border border-vx-border">
+                  <h5 class="text-xs font-semibold uppercase tracking-wider text-vx-textMuted mb-2">Minimum</h5>
+                  <div id="req-min-content" class="text-xs text-vx-text leading-relaxed max-h-40 overflow-y-auto"></div>
                 </div>
-                <div class="bg-nl-card p-4 rounded-xl border border-nl-border">
-                  <h5 class="text-xs font-semibold uppercase tracking-wider text-nl-textMuted mb-2">Recommended</h5>
-                  <div id="req-rec-content" class="text-xs text-nl-text leading-relaxed max-h-40 overflow-y-auto"></div>
+                <div class="bg-vx-card p-4 rounded-xl border border-vx-border">
+                  <h5 class="text-xs font-semibold uppercase tracking-wider text-vx-textMuted mb-2">Recommended</h5>
+                  <div id="req-rec-content" class="text-xs text-vx-text leading-relaxed max-h-40 overflow-y-auto"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="fixed bottom-0 left-60 right-0 bg-nl-surface/95 backdrop-blur-xl border-t border-nl-border p-4 flex gap-4 z-50">
-          <button onclick="showAccountSelection()" class="flex-1 py-4 bg-nl-pink text-white rounded-xl font-bold hover:scale-[1.02] transition-transform shadow-lg shadow-nl-pink/20">
+        <div class="fixed bottom-0 left-60 right-0 bg-vx-surface/95 backdrop-blur-xl border-t border-vx-border p-4 flex gap-4 z-50">
+          <button onclick="showAccountSelection()" class="flex-1 py-4 bg-vx-pink text-white rounded-xl font-bold hover:scale-[1.02] transition-transform shadow-lg shadow-vx-pink/20">
             Show Accounts
           </button>
-          <button id="detail-bypass-btn" onclick="switchToBypassAndScroll()" class="flex-1 py-4 bg-nl-card border border-nl-border rounded-xl font-bold hover:border-nl-pink transition-all flex items-center justify-center">
+          <button id="detail-bypass-btn" onclick="switchToBypassAndScroll()" class="flex-1 py-4 bg-vx-card border border-vx-border rounded-xl font-bold hover:border-vx-pink transition-all flex items-center justify-center">
             Inject Bypass
           </button>
         </div>
@@ -430,7 +430,7 @@
     <!-- ACCOUNT SELECTION TAB -->
     <div class="tab-content" id="tab-select-account">
       <div class="px-8 py-8">
-        <button onclick="goBackToDetails()" class="flex items-center gap-2 text-nl-textMuted hover:text-nl-pink mb-6">
+        <button onclick="goBackToDetails()" class="flex items-center gap-2 text-vx-textMuted hover:text-vx-pink mb-6">
           <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Game Details
         </button>
         <h3 class="text-2xl font-bold mb-6">Select Account</h3>
@@ -441,11 +441,11 @@
 </div>
 
 <div id="custom-path-modal" class="fixed inset-0 bg-black/65 backdrop-blur-[4px] z-[100] hidden flex items-center justify-center modal-overlay transition-all duration-300">
-  <div class="bg-nl-surface/85 backdrop-blur-2xl border border-nl-border/60 p-6 rounded-2xl w-[420px] animate-float-in shadow-2xl shadow-black/80">
-    <h3 class="text-lg font-bold mb-4 text-nl-pinkLight tracking-wide">Add Custom Game Path</h3>
-    <input type="text" id="path-input" oninput="checkGameExistence(this.value)" placeholder="C:\Games\GTAV" class="w-full bg-nl-bg/85 border border-nl-border/50 p-3.5 rounded-xl mb-4 text-sm focus:outline-none focus:border-nl-pink focus:ring-1 focus:ring-nl-pink/30 text-nl-text placeholder-nl-textMuted transition-all duration-300">
-    <div class="flex items-center gap-2 mb-4"><input type="checkbox" id="check-exist-toggle" checked class="accent-nl-pink"><label class="text-xs text-nl-textMuted font-medium">Check if game exists there</label></div>
-    <select id="custom-game-select" class="w-full bg-nl-bg/85 border border-nl-border/50 p-3.5 rounded-xl mb-6 text-sm focus:outline-none focus:border-nl-pink focus:ring-1 focus:ring-nl-pink/30 text-nl-text transition-all duration-300">
+  <div class="bg-vx-surface/85 backdrop-blur-2xl border border-vx-border/60 p-6 rounded-2xl w-[420px] animate-float-in shadow-2xl shadow-black/80">
+    <h3 class="text-lg font-bold mb-4 text-vx-pinkLight tracking-wide">Add Custom Game Path</h3>
+    <input type="text" id="path-input" oninput="checkGameExistence(this.value)" placeholder="C:\Games\GTAV" class="w-full bg-vx-bg/85 border border-vx-border/50 p-3.5 rounded-xl mb-4 text-sm focus:outline-none focus:border-vx-pink focus:ring-1 focus:ring-vx-pink/30 text-vx-text placeholder-vx-textMuted transition-all duration-300">
+    <div class="flex items-center gap-2 mb-4"><input type="checkbox" id="check-exist-toggle" checked class="accent-vx-pink"><label class="text-xs text-vx-textMuted font-medium">Check if game exists there</label></div>
+    <select id="custom-game-select" class="w-full bg-vx-bg/85 border border-vx-border/50 p-3.5 rounded-xl mb-6 text-sm focus:outline-none focus:border-vx-pink focus:ring-1 focus:ring-vx-pink/30 text-vx-text transition-all duration-300">
       <option value="Not Detected">Not Detected</option>
     </select>
     <div class="flex gap-3">
@@ -457,19 +457,19 @@
 
 <!-- Update Required Modal (auto‑shown when a new version is detected) -->
 <div id="update-modal" class="fixed inset-0 bg-black/70 backdrop-blur-[4px] z-[300] hidden flex items-center justify-center modal-overlay transition-all duration-300">
-  <div class="bg-nl-surface/85 backdrop-blur-2xl border border-nl-pink/50 p-7 rounded-2xl w-[480px] animate-float-in shadow-2xl shadow-black/95">
+  <div class="bg-vx-surface/85 backdrop-blur-2xl border border-vx-pink/50 p-7 rounded-2xl w-[480px] animate-float-in shadow-2xl shadow-black/95">
     <div class="flex items-center gap-3 mb-4">
-      <i data-lucide="alert-triangle" class="w-7 h-7 text-nl-pink animate-pulse"></i>
-      <h3 class="text-xl font-bold text-nl-pinkLight tracking-wide">Update Required</h3>
+      <i data-lucide="alert-triangle" class="w-7 h-7 text-vx-pink animate-pulse"></i>
+      <h3 class="text-xl font-bold text-vx-pinkLight tracking-wide">Update Required</h3>
     </div>
-    <p class="text-sm text-nl-text/90 leading-relaxed mb-2">
+    <p class="text-sm text-vx-text/90 leading-relaxed mb-2">
       In order to use Vortex Launcher you need to update to the latest version.
     </p>
-    <div class="bg-nl-bg/65 p-4 rounded-xl border border-nl-border/50 my-4 flex flex-col gap-1.5">
-      <p class="text-xs text-nl-textMuted">Your version: <span id="current-version-display" class="font-mono text-nl-pink font-semibold"></span></p>
-      <p class="text-xs text-nl-textMuted">Latest version: <span id="latest-version-display" class="font-mono text-green-400 font-semibold"></span></p>
+    <div class="bg-vx-bg/65 p-4 rounded-xl border border-vx-border/50 my-4 flex flex-col gap-1.5">
+      <p class="text-xs text-vx-textMuted">Your version: <span id="current-version-display" class="font-mono text-vx-pink font-semibold"></span></p>
+      <p class="text-xs text-vx-textMuted">Latest version: <span id="latest-version-display" class="font-mono text-green-400 font-semibold"></span></p>
     </div>
-    <p class="text-xs text-nl-textMuted mb-6 leading-relaxed">
+    <p class="text-xs text-vx-textMuted mb-6 leading-relaxed">
       Please download the new release from GitHub and install it to continue using the launcher.
     </p>
     <div class="flex gap-3">
@@ -485,12 +485,12 @@
 
 <!-- Bypass Warning Modal -->
 <div id="bypass-warning-modal" class="fixed inset-0 bg-black/65 backdrop-blur-[4px] z-[110] hidden flex items-center justify-center modal-overlay transition-all duration-300">
-  <div class="bg-nl-surface/80 backdrop-blur-2xl border border-nl-border/60 p-6 rounded-2xl w-[420px] animate-float-in shadow-2xl shadow-black/80">
+  <div class="bg-vx-surface/80 backdrop-blur-2xl border border-vx-border/60 p-6 rounded-2xl w-[420px] animate-float-in shadow-2xl shadow-black/80">
     <div class="flex items-center gap-3 mb-4">
-      <i data-lucide="alert-triangle" class="w-6 h-6 text-nl-pink"></i>
-      <h3 class="text-lg font-bold text-nl-pinkLight tracking-wide">Warning</h3>
+      <i data-lucide="alert-triangle" class="w-6 h-6 text-vx-pink"></i>
+      <h3 class="text-lg font-bold text-vx-pinkLight tracking-wide">Warning</h3>
     </div>
-    <p class="text-sm text-nl-textMuted mb-6 leading-relaxed font-medium">
+    <p class="text-sm text-vx-textMuted mb-6 leading-relaxed font-medium">
       This bypass was reported to not working.<br>
       You can download and try it but we can't guarantee that it will work.
     </p>
@@ -629,7 +629,7 @@ function renderAchievements() {
   if (!container) return;
   
   if (!GTA_ACHIEVEMENTS.length) {
-    container.innerHTML = '<p class="col-span-full text-center text-nl-textMuted py-8">No achievement definitions found.</p>';
+    container.innerHTML = '<p class="col-span-full text-center text-vx-textMuted py-8">No achievement definitions found.</p>';
     return;
   }
   
@@ -641,7 +641,7 @@ function renderAchievements() {
   );
   
   if (filtered.length === 0) {
-    container.innerHTML = '<p class="col-span-full text-center text-nl-textMuted py-8">No matching achievements.</p>';
+    container.innerHTML = '<p class="col-span-full text-center text-vx-textMuted py-8">No matching achievements.</p>';
     return;
   }
   
@@ -653,12 +653,12 @@ function renderAchievements() {
       : '<span class="absolute top-3 right-3 bg-gray-700/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1"><i data-lucide="lock" class="w-3 h-3"></i> Locked</span>';
     
     return `
-      <div class="achievement-card ${lockClass} relative bg-nl-card border border-nl-border rounded-xl overflow-hidden hover:border-nl-pink transition-all">
+      <div class="achievement-card ${lockClass} relative bg-vx-card border border-vx-border rounded-xl overflow-hidden hover:border-vx-pink transition-all">
         ${badge}
         <div class="flex flex-col items-center p-4 text-center">
-          <img src="${ach.icon}" class="w-16 h-16 object-contain rounded-full mb-3 bg-nl-surface p-1" onerror="this.src='./assets/icon.png'">
-          <h4 class="text-sm font-bold text-nl-text mb-1">${ach.title}</h4>
-          <p class="text-[11px] text-nl-textMuted leading-relaxed">${ach.description}</p>
+          <img src="${ach.icon}" class="w-16 h-16 object-contain rounded-full mb-3 bg-vx-surface p-1" onerror="this.src='./assets/icon.png'">
+          <h4 class="text-sm font-bold text-vx-text mb-1">${ach.title}</h4>
+          <p class="text-[11px] text-vx-textMuted leading-relaxed">${ach.description}</p>
         </div>
       </div>
     `;
@@ -781,10 +781,10 @@ function renderAccountsFromGithub() {
   const container = document.getElementById('accounts-container');
   const gameIds = Object.keys(githubAccounts).filter(id => githubAccounts[id].length > 0);
   if (gameIds.length === 0) {
-    container.innerHTML = '<p class="col-span-full text-center text-nl-textMuted py-8">No accounts found.</p>';
+    container.innerHTML = '<p class="col-span-full text-center text-vx-textMuted py-8">No accounts found.</p>';
     return;
   }
-  container.innerHTML = '<p class="col-span-full text-center text-nl-textMuted py-8">Loading accounts...</p>';
+  container.innerHTML = '<p class="col-span-full text-center text-vx-textMuted py-8">Loading accounts...</p>';
   let idx = 0;
   function addNext() {
     if (idx >= gameIds.length) {
@@ -811,7 +811,7 @@ function renderAccountsFromGithub() {
     const installed = status.installed;
     const escapedName = game.name.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
     const card = document.createElement('div');
-    card.className = 'game-card rounded-xl bg-nl-card border border-nl-border cursor-pointer';
+    card.className = 'game-card rounded-xl bg-vx-card border border-vx-border cursor-pointer';
     card.setAttribute('onclick', `openGameDetail('${escapedName}')`);
     card.innerHTML = `
       <div class="relative aspect-[16/7.5] rounded-t-xl overflow-hidden">
@@ -820,8 +820,8 @@ function renderAccountsFromGithub() {
       <div class="p-3">
         <h4 class="text-sm font-semibold truncate mb-1.5">${game.name}</h4>
         <div class="flex items-center gap-1.5">
-          <span class="w-1.5 h-1.5 ${installed ? 'bg-green-500' : 'bg-nl-textMuted'} rounded-full"></span>
-          <span class="text-[10px] ${installed ? 'text-green-400' : 'text-nl-textMuted'} font-medium uppercase tracking-tighter">
+          <span class="w-1.5 h-1.5 ${installed ? 'bg-green-500' : 'bg-vx-textMuted'} rounded-full"></span>
+          <span class="text-[10px] ${installed ? 'text-green-400' : 'text-vx-textMuted'} font-medium uppercase tracking-tighter">
             ${installed ? 'Installed' : 'Not Detected'}
           </span>
         </div>
@@ -850,15 +850,15 @@ function openGameDetail(gameName) {
   let badgesHTML = '';
   if (game.categories) {
     game.categories.forEach(cat => {
-      badgesHTML += `<span class="inline-block px-2 py-1 text-[10px] font-medium rounded-full bg-nl-pinkMuted text-nl-pinkLight border border-nl-pink/20">${cat.description}</span>`;
+      badgesHTML += `<span class="inline-block px-2 py-1 text-[10px] font-medium rounded-full bg-vx-pinkMuted text-vx-pinkLight border border-vx-pink/20">${cat.description}</span>`;
     });
   }
   if (game.genres) {
     game.genres.forEach(gen => {
-      badgesHTML += `<span class="inline-block px-2 py-1 text-[10px] font-medium rounded-full bg-nl-card border border-nl-border text-nl-text">${gen.description}</span>`;
+      badgesHTML += `<span class="inline-block px-2 py-1 text-[10px] font-medium rounded-full bg-vx-card border border-vx-border text-vx-text">${gen.description}</span>`;
     });
   }
-  badgesContainer.innerHTML = badgesHTML || '<span class="text-xs text-nl-textMuted">No categories</span>';
+  badgesContainer.innerHTML = badgesHTML || '<span class="text-xs text-vx-textMuted">No categories</span>';
   const reqMinDiv = document.getElementById('req-min-content');
   const reqRecDiv = document.getElementById('req-rec-content');
   if (game.pc_requirements) {
@@ -884,20 +884,20 @@ function openGameDetail(gameName) {
 function showAccountSelection() {
   if (!currentDetailGame) return;
   const appid = currentDetailGame.steam_appid;
-  const accounts = discordAccounts[appid] || [];
+  const accounts = githubAccounts[appid] || [];
   const container = document.getElementById('account-selection-container');
   if (accounts.length === 0) {
-    container.innerHTML = '<p class="text-nl-textMuted">No accounts available for this game.</p>';
+    container.innerHTML = '<p class="text-vx-textMuted">No accounts available for this game.</p>';
   } else {
     container.innerHTML = accounts.map(acc => `
       <div class="game-card p-6 cursor-pointer group transition-all" onclick="steamLogin('${acc.user}','${acc.pass}')">
         <div class="relative z-10 flex justify-between items-center">
           <div>
-            <p class="text-xs text-nl-textMuted uppercase mb-1 tracking-wider">Username</p>
-            <p class="font-bold text-lg text-nl-pinkLight group-hover:text-white transition-colors">${acc.user}</p>
+            <p class="text-xs text-vx-textMuted uppercase mb-1 tracking-wider">Username</p>
+            <p class="font-bold text-lg text-vx-pinkLight group-hover:text-white transition-colors">${acc.user}</p>
           </div>
-          <div class="w-10 h-10 rounded-xl bg-nl-pinkMuted flex items-center justify-center border border-nl-border group-hover:border-nl-pink/40 group-hover:bg-nl-pink/10 transition-all">
-            <i data-lucide="log-in" class="w-5 h-5 text-nl-pinkLight group-hover:text-nl-pink transition-colors"></i>
+          <div class="w-10 h-10 rounded-xl bg-vx-pinkMuted flex items-center justify-center border border-vx-border group-hover:border-vx-pink/40 group-hover:bg-vx-pink/10 transition-all">
+            <i data-lucide="log-in" class="w-5 h-5 text-vx-pinkLight group-hover:text-vx-pink transition-colors"></i>
           </div>
         </div>
       </div>`).join('');
@@ -934,7 +934,7 @@ async function steamLogin(username, password) {
 function renderBypassCards() {
   const container = document.getElementById('bypass-games-container');
   if (!bypassGames.length) {
-    container.innerHTML = '<p class="col-span-full text-center text-nl-textMuted py-8">No bypass games loaded.</p>';
+    container.innerHTML = '<p class="col-span-full text-center text-vx-textMuted py-8">No bypass games loaded.</p>';
     return;
   }
   container.innerHTML = bypassGames.map(game => {
@@ -947,15 +947,15 @@ function renderBypassCards() {
     const coverImage = gameInfo.header_image || `https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/${game.steamAppId}/header.jpg`;
     const escapedName = name.replace(/'/g, "\\'");
     return `
-      <div id="bypass-${name.replace(/\s+/g, '-')}" class="game-card rounded-xl bg-nl-card border border-nl-border cursor-pointer" onclick="openBypassDetail('${escapedName}')">
+      <div id="bypass-${name.replace(/\s+/g, '-')}" class="game-card rounded-xl bg-vx-card border border-vx-border cursor-pointer" onclick="openBypassDetail('${escapedName}')">
         <div class="relative aspect-[16/7.5] rounded-t-xl overflow-hidden">
           <img src="${coverImage}" alt="${displayName}" class="w-full h-full object-cover">
         </div>
         <div class="p-3">
           <h4 class="text-sm font-semibold truncate mb-1.5">${displayName}</h4>
           <div class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 ${installed ? 'bg-green-500' : 'bg-nl-textMuted'} rounded-full"></span>
-            <span class="text-[10px] ${installed ? 'text-green-400' : 'text-nl-textMuted'} font-medium uppercase tracking-tighter">
+            <span class="w-1.5 h-1.5 ${installed ? 'bg-green-500' : 'bg-vx-textMuted'} rounded-full"></span>
+            <span class="text-[10px] ${installed ? 'text-green-400' : 'text-vx-textMuted'} font-medium uppercase tracking-tighter">
               ${installed ? (isCustom ? 'Custom Path' : 'Installed') : 'Not Detected'}
             </span>
           </div>
@@ -983,8 +983,8 @@ function openBypassDetail(gameName) {
   document.getElementById('bypass-detail-banner').src = coverImage;
   document.getElementById('bypass-detail-title').textContent = displayName;
   document.getElementById('bypass-detail-status').innerHTML = installed
-    ? `<span class="text-green-400">● Installed</span> ${isCustom ? '<span class="text-nl-pinkLight ml-2">(Custom Path)</span>' : ''}`
-    : `<span class="text-nl-textMuted">● Not Detected</span>`;
+    ? `<span class="text-green-400">● Installed</span> ${isCustom ? '<span class="text-vx-pinkLight ml-2">(Custom Path)</span>' : ''}`
+    : `<span class="text-vx-textMuted">● Not Detected</span>`;
 
   const actionsDiv = document.getElementById('bypass-detail-actions');
   let actionsHTML = '';
@@ -1024,7 +1024,7 @@ function openBypassDetail(gameName) {
       </button>`;
   }
   if (!installed) {
-    actionsHTML += `<p class="text-nl-textMuted">Game not found – add a custom path.</p>`;
+    actionsHTML += `<p class="text-vx-textMuted">Game not found – add a custom path.</p>`;
   }
   actionsDiv.innerHTML = actionsHTML;
   lucide.createIcons();
@@ -1205,7 +1205,7 @@ async function applyCustomPath() {
     toggleCustomPathModal();
     await scanForAllGames();
     renderBypassCards();
-    renderAccountsFromDiscord();
+    renderAccountsFromGithub();
   } else {
     showToast(res.error || 'Failed to save path.', 'error');
   }
@@ -1297,10 +1297,10 @@ async function autoLogin() {
 function showToast(message, type='info', duration = 3000) {
   const container = document.getElementById('toastContainer');
   const toast = document.createElement('div');
-  const colors = { success:'border-green-500/30 bg-green-500/10', error:'border-red-500/30 bg-red-500/10', info:'border-nl-pink/30 bg-nl-pinkMuted' };
+  const colors = { success:'border-green-500/30 bg-green-500/10', error:'border-red-500/30 bg-red-500/10', info:'border-vx-pink/30 bg-vx-pinkMuted' };
   const icons = { success:'check-circle', error:'alert-circle', info:'info' };
   toast.className = `toast flex items-center gap-3 px-4 py-3 rounded-xl border ${colors[type]} backdrop-blur-xl shadow-2xl min-w-[280px]`;
-  toast.innerHTML = `<i data-lucide="${icons[type]}" class="w-4 h-4 ${type==='error'?'text-red-400':'text-nl-pink'} shrink-0"></i><span class="text-sm font-medium text-nl-text">${message}</span>`;
+  toast.innerHTML = `<i data-lucide="${icons[type]}" class="w-4 h-4 ${type==='error'?'text-red-400':'text-vx-pink'} shrink-0"></i><span class="text-sm font-medium text-vx-text">${message}</span>`;
   container.appendChild(toast); lucide.createIcons();
   setTimeout(() => { toast.classList.add('toast-exit'); setTimeout(() => toast.remove(),300); }, duration);
 }

@@ -142,10 +142,6 @@ function saveCustomPaths(data) {
   fs.writeFileSync(customPathsFile, JSON.stringify(data, null, 2));
 }
 
-// ── Discord Config ──────────────────────────────────────────────────
-const DISCORD_TOKEN = "";
-const DISCORD_CHANNEL_ID = "";
-const DISCORD_MESSAGE_ID = "";
 
 // ── File download with redirect support ─────────────────────────────
 function downloadFile(urlStr, destPath, onProgress) {

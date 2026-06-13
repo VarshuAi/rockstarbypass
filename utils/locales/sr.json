@@ -92,8 +92,6 @@
   "update_required.exit": "Izađi",
   "toast.login_success": "Prijava uspešna!",
   "toast.welcome_back": "Dobrodošli nazad!",
-  "toast.discord_error": "Discord greška: ",
-  "toast.fetch_error": "Neuspešno preuzimanje Discord naloga",
   "toast.launching": "Pokrećem {game}...",
   "toast.launch_fail": "Pokretanje nije uspelo: ",
   "toast.admin_launch_hint": "Zahtev za administratorsko pokretanje {game}...",
