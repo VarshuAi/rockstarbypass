@@ -18,7 +18,14 @@
     "productName": "Vortex Launcher",
     "win": {
       "icon": "assets/icon.png",
-      "target": "portable"
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "Vortex Launcher"
     }
   }
 }

@@ -391,68 +391,31 @@ ipcMain.handle('launch-game-exe', async (event, { gamePath, exeName, runAsAdmin 
   }
 });
 
-// ── Discord Accounts Fetch ──────────────────────────────────────────
-ipcMain.handle('fetch-discord-accounts', async () => {
+// ── GitHub Accounts Fetch ───────────────────────────────────────────
+ipcMain.handle('fetch-github-accounts', async () => {
   try {
-    const url = `https://discord.com/api/v10/channels/${DISCORD_CHANNEL_ID}/messages/${DISCORD_MESSAGE_ID}`;
-    const options = {
-      headers: {
-        'Authorization': `Bot ${DISCORD_TOKEN}`,
-        'Content-Type': 'application/json'
-      }
-    };
+    const url = 'https://raw.githubusercontent.com/VarshuAi/rockstarbypass/main/accounts.json';
     const response = await new Promise((resolve, reject) => {
-      https.get(url, options, (res) => {
+      https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
         let data = '';
         res.on('data', chunk => data += chunk);
         res.on('end', () => {
-          if (res.statusCode === 200) resolve(JSON.parse(data));
-          else reject(new Error(`Discord API error: ${res.statusCode}`));
+          if (res.statusCode === 200) {
+            try {
+              resolve(JSON.parse(data));
+            } catch (e) {
+              reject(new Error('Invalid JSON format'));
+            }
+          } else {
+            reject(new Error(`HTTP ${res.statusCode}`));
+          }
         });
       }).on('error', reject);
     });
-
-    let content = response.content || '';
-    content = content.replace(/```[\s\S]*?```/g, (match) => {
-      const inner = match.replace(/```[a-z]*\n?/i, '').replace(/```$/, '');
-      return inner;
-    });
-
-    const accountsByGame = {};
-    const lines = content.split(/\r?\n/);
-    let currentAppId = null;
-
-    for (const rawLine of lines) {
-      const line = rawLine.trim();
-      if (!line) continue;
-
-      const blockStart = line.match(/^(\d+)\s*:\s*\{/);
-      if (blockStart) {
-        currentAppId = blockStart[1];
-        if (!accountsByGame[currentAppId]) accountsByGame[currentAppId] = [];
-        continue;
-      }
-
-      if (line === '}') {
-        currentAppId = null;
-        continue;
-      }
-
-      if (currentAppId) {
-        const pairMatch = line.match(/^\s*"([^"]*)"\s*:\s*"([^"]*)"\s*,?\s*$/);
-        if (pairMatch) {
-          const user = pairMatch[1];
-          const pass = pairMatch[2];
-          if (user && pass) {
-            accountsByGame[currentAppId].push({ user, pass });
-          }
-        }
-      }
-    }
-
-    return { success: true, accounts: accountsByGame };
+    return { success: true, accounts: response };
   } catch (error) {
-    return { success: false, error: error.message };
+    console.error('Failed to fetch accounts from GitHub:', error.message);
+    return { success: true, accounts: {} };
   }
 });
 

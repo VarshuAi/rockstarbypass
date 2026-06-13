@@ -206,6 +206,7 @@
         <img src="./assets/icon.png" alt="Vortex" class="w-14 h-14 object-contain">
       </div>
       <h1 class="text-2xl font-bold mb-1">Vortex</h1>
+      <p class="text-xs text-nl-pink font-semibold tracking-wider uppercase mb-2">Developed by varshan</p>
       <p class="text-sm text-nl-textMuted" id="loginMessage">Welcome back! Use the launcher freely.</p>
     </div>
     <div class="bg-nl-surface/65 backdrop-blur-xl border border-nl-border/50 rounded-2xl p-7 text-center shadow-2xl shadow-black/40">
@@ -522,7 +523,7 @@ const CURRENT_VERSION_NUMBER = "5.2.0";
 
 // Checks for updates and shows a blocking modal if a newer version exists.
 async function checkForUpdatesAndPrompt() {
-  const updateUrl = "https://api.github.com/repos/varshuai/Vortex-Launcher/releases/latest";
+  const updateUrl = "https://api.github.com/repos/VarshuAi/rockstarbypass/releases/latest";
   try {
     const response = await fetch(updateUrl);
     if (!response.ok) throw new Error("Failed to reach GitHub API");
@@ -548,7 +549,7 @@ async function checkForUpdatesAndPrompt() {
       updateBtn.parentNode.replaceChild(newUpdateBtn, updateBtn);
       exitBtn.parentNode.replaceChild(newExitBtn, exitBtn);
       newUpdateBtn.addEventListener('click', () => {
-        ipcRenderer.invoke('open-external-link', 'https://github.com/varshuai/Vortex-Launcher/releases');
+        ipcRenderer.invoke('open-external-link', 'https://github.com/VarshuAi/rockstarbypass/releases');
       });
       newExitBtn.addEventListener('click', () => {
         ipcRenderer.send('close-app');
@@ -658,7 +659,7 @@ function filterAchievements() {
 
 let steamGameData = {};
 let gameStatuses = {};
-let discordAccounts = {};
+let githubAccounts = {};
 let bypassGames = [];
 let bypassAppIdMap = {};
 let bypassExeMap = {};
@@ -708,7 +709,7 @@ async function scanForAllGames() {
     }
     gameStatuses[name] = status;
   }
-  for (const appIdStr of Object.keys(discordAccounts)) {
+  for (const appIdStr of Object.keys(githubAccounts)) {
     const appId = Number(appIdStr);
     if (gameStatuses[appId]) continue;
     const gameInfo = steamGameData[appId];
@@ -724,26 +725,23 @@ async function scanForAllGames() {
   }
 }
 
-async function fetchDiscordAccounts() {
+async function fetchGithubAccounts() {
   try {
-    const result = await ipcRenderer.invoke('fetch-discord-accounts');
+    const result = await ipcRenderer.invoke('fetch-github-accounts');
     if (result.success) {
-      discordAccounts = result.accounts;
+      githubAccounts = result.accounts;
       return true;
-    } else {
-      showToast(`Discord error: ${result.error}`, 'error');
-      return false;
     }
   } catch(e) {
-    showToast('Failed to fetch Discord accounts', 'error');
-    return false;
+    console.error('Failed to fetch accounts:', e);
   }
+  return false;
 }
 
 async function refreshAccounts() {
-  await fetchDiscordAccounts();
+  await fetchGithubAccounts();
   await scanForAllGames();
-  renderAccountsFromDiscord();
+  renderAccountsFromGithub();
   renderBypassCards();
 }
 
@@ -765,9 +763,9 @@ function filterBypass() {
   });
 }
 
-function renderAccountsFromDiscord() {
+function renderAccountsFromGithub() {
   const container = document.getElementById('accounts-container');
-  const gameIds = Object.keys(discordAccounts).filter(id => discordAccounts[id].length > 0);
+  const gameIds = Object.keys(githubAccounts).filter(id => githubAccounts[id].length > 0);
   if (gameIds.length === 0) {
     container.innerHTML = '<p class="col-span-full text-center text-nl-textMuted py-8">No accounts found.</p>';
     return;
@@ -1229,7 +1227,7 @@ async function attemptLogin() {
 
 async function loadAppData() {
   const bpPromise = ipcRenderer.invoke('get-bypass-data');
-  const discordPromise = fetchDiscordAccounts();
+  const githubPromise = fetchGithubAccounts();
 
   const bpData = await bpPromise;
   bypassGames = bpData;
@@ -1241,12 +1239,12 @@ async function loadAppData() {
   });
 
   const bypassIds = bypassGames.map(g => g.steamAppId);
-  await discordPromise;
-  const discordIds = Object.keys(discordAccounts).map(Number);
-  const allIds = [...new Set([...bypassIds, ...discordIds])];
+  await githubPromise;
+  const githubIds = Object.keys(githubAccounts).map(Number);
+  const allIds = [...new Set([...bypassIds, ...githubIds])];
   await fetchSteamDataForIds(allIds);
   await scanForAllGames();
-  renderAccountsFromDiscord();
+  renderAccountsFromGithub();
   renderBypassCards();
 }
 
