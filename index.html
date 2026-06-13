@@ -1212,16 +1212,20 @@ async function attemptLogin() {
   btn.textContent = "Entering...";
   try {
     await ipcRenderer.invoke('save-key', 'free_access');
-    document.getElementById('loginOverlay').classList.add('fade-out');
-    showToast('Welcome to Vortex!', 'success');
     await loadAppData();
-    await checkForUpdatesAndPrompt();
+    setTimeout(() => {
+      document.getElementById('loginOverlay').classList.add('fade-out');
+      showToast('Welcome to Vortex!', 'success');
+      checkForUpdatesAndPrompt();
+    }, 2000);
   } catch(e) {
     console.error(e);
     document.getElementById('loginOverlay').classList.add('fade-out');
     await loadAppData();
   } finally {
-    btn.textContent = "Enter Launcher";
+    setTimeout(() => {
+      btn.textContent = "Enter Launcher";
+    }, 2000);
   }
 }
 
@@ -1257,21 +1261,22 @@ async function autoLogin() {
     }
     const isValid = await ipcRenderer.invoke('validate-access-key', savedKey);
     if (isValid) {
-      document.getElementById('loginOverlay').classList.add('fade-out');
-      showToast('Welcome back!', 'success');
       await loadAppData();
-      const updateAvailable = await checkForUpdatesAndPrompt();
-      if (!updateAvailable) {
-        // nothing else
-      }
+      setTimeout(() => {
+        document.getElementById('loginOverlay').classList.add('fade-out');
+        showToast('Welcome back!', 'success');
+        checkForUpdatesAndPrompt();
+      }, 2500);
     } else {
-      document.getElementById('loginOverlay').classList.add('fade-out');
       await loadAppData();
+      setTimeout(() => {
+        document.getElementById('loginOverlay').classList.add('fade-out');
+      }, 2000);
     }
   } catch(e) {
     console.error('Auto-login error', e);
-    document.getElementById('loginOverlay').classList.add('fade-out');
     await loadAppData();
+    document.getElementById('loginOverlay').classList.add('fade-out');
   }
 }
 
